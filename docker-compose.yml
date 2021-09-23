@@ -44,7 +44,7 @@ services:
       - 9000
 
   db_master:
-    platform: linux/x86_64
+    platform: linux/amd64
     image: mysql:5.7
     environment:
       - MYSQL_DATABASE=${DB_NAME}
