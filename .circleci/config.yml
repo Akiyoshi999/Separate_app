@@ -9,6 +9,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: env copy
+          command: cp .env.example .env
+      - run:
           name: docker-compose build
           command: docker-compose build
   # testするjob
@@ -17,9 +20,6 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      - run:
-          name: env copy
-          command: cp .env.example .env
       - run:
           name: docker-compose up -d
           command: docker-compose up -d
