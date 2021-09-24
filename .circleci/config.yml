@@ -18,7 +18,8 @@ jobs:
   # testするjob
   test:
     machine:
-      image: cimg/php:8.0.11
+      #image: cimg/php:8.0.11
+      image: ubuntu-2004:202107-02
     steps:
       - checkout
       - run:
