@@ -4,9 +4,9 @@ version: 2.1
 jobs:
   # buildするjob
   build:
-    # machine:
-    docker:
-      - image: cimg/php:8.0.11
+    machine:
+      #image: cimg/php:8.0.11
+      image: ubuntu-2004:202010-01
     steps:
       - checkout
       - run:
