@@ -4,8 +4,9 @@ version: 2.1
 jobs:
   # buildするjob
   build:
-    machine:
-      image: circleci/php:8.0.11
+    # machine:
+    docker:
+      - image: cimg/php:8.0.11
     steps:
       - checkout
       - run:
