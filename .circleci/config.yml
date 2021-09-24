@@ -23,6 +23,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: env copy
+          command: cp .env.example .env
+      - run:
           name: docker-compose up -d
           command: docker-compose up -d
       - run: sleep 30
