@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: env copy
-          command: docker-compose run app cp .env.example .env
+          command: cp .env.example .env
       - run:
           name: docker-compose build
           command: docker-compose build
@@ -34,7 +34,7 @@ jobs:
           command: docker-compose run app composer install
       - run:
           name: cp .env.example .env
-          command: cp .env.example .env
+          command: docker-compose run app cp .env.example .env
       - run:
           name: API key
           command: docker-compose run app php artisan key:generate
