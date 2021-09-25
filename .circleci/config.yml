@@ -30,13 +30,13 @@ jobs:
           command: docker-compose up -d
       #- run: sleep 30
       - run:
-          name: compser install
+          name: docker-compose run app composer install
           command: docker-compose run app composer install
       - run:
-          name: cp .env.example .env
+          name: docker-compose run app cp .env.example .env
           command: docker-compose run app cp .env.example .env
       - run:
-          name: API key
+          name: docker-compose run app php artisan key:generate
           command: docker-compose run app php artisan key:generate
       # - run:
       #     name: docker-compose run back rails db:create RAILS_ENV=test
@@ -48,8 +48,8 @@ jobs:
       #     name: docker-compose run back bundle exec rspec spec
       #     command: docker-compose run back bundle exec rspec spec
       - run:
-          name: test
-          command: docker-compose run artisan test
+          name: docker-compose run app php artisan test
+          command: docker-compose run app php artisan test
       - run:
           name: docker-compose down
           command: docker-compose down
