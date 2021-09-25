@@ -39,11 +39,11 @@ jobs:
           name: docker-compose run app php artisan key:generate
           command: docker-compose run app php artisan key:generate
       - run:
-          name: docker-compose run front_app yarn
-          command: docker-compose run front_app yarn
+          name: docker-compose exec front_app yarn
+          command: docker-compose exec front_app yarn
       - run:
-          name: docker-compose run front_app yarn run test
-          command: docker-compose run front_app yarn run test
+          name: docker-compose exec front_app yarn run test
+          command: docker-compose exec front_app yarn run test
       # - run:
       #     name: docker-compose run back rails db:create RAILS_ENV=test
       #     command: docker-compose run back rails db:create RAILS_ENV=test
