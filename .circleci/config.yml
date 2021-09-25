@@ -28,7 +28,7 @@ jobs:
       - run:
           name: docker-compose up -d
           command: docker-compose up -d
-      - run: sleep 30
+      #- run: sleep 30
       - run:
           name: compser install
           command: docker-compose run app composer install
@@ -37,7 +37,7 @@ jobs:
           command: cp .env.example .env
       - run:
           name: API key
-          command: docker-compose php artisan key:generate
+          command: docker-compose run app php artisan key:generate
       # - run:
       #     name: docker-compose run back rails db:create RAILS_ENV=test
       #     command: docker-compose run back rails db:create RAILS_ENV=test
